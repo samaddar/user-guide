@@ -1,0 +1,2042 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.1, mkdocs-material-8.5.7">
+    
+    
+      
+        <title>Example Job Submission Scripts - RCC User Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#illustrative-examples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="RCC User Guide" class="md-header__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCC User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Example Job Submission Scripts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="RCC User Guide" class="md-nav__button md-logo" aria-label="RCC User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RCC User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Account and Allocation Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Account and Allocation Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Account and Allocation Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../account_allocation_management_overview.md" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../create_and_manage_accounts/" class="md-nav__link">
+        Account Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../request_and_manage_allocations.md" class="md-nav__link">
+        Allocation Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Midway2 and Midway3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Midway2 and Midway3" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Midway2 and Midway3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway_getting_started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway_hardware_overview/" class="md-nav__link">
+        Hardware Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway_connecting/" class="md-nav__link">
+        Connecting to Midway
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          Data Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data Management" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Data Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway3_data_transfer/" class="md-nav__link">
+        Data Transfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway3_data_storage/" class="md-nav__link">
+        Data Storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway3_file_permissions/" class="md-nav__link">
+        File System Permissions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5">
+          Running Jobs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Running Jobs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Running Jobs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway_jobs_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway_submitting_jobs/" class="md-nav__link">
+        Submitting Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway_job_management/" class="md-nav__link">
+        Managing Jobs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Example Job Submission Scripts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Example Job Submission Scripts
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#job-arrays" class="md-nav__link">
+    Job arrays
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#large-memory-jobs" class="md-nav__link">
+    Large-memory jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Large-memory jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-a-large-memory-job" class="md-nav__link">
+    Running a large-memory job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-computing-on-bigmem2" class="md-nav__link">
+    Interactive computing on bigmem2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-batch-jobs" class="md-nav__link">
+    Parallel batch jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpi-jobs" class="md-nav__link">
+    MPI jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="MPI jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-notes" class="md-nav__link">
+    Additional notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hybrid-mpiopenmp-jobs" class="md-nav__link">
+    Hybrid MPI/OpenMP jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-jobs" class="md-nav__link">
+    GPU jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="GPU jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-gpu-code-on-midway2" class="md-nav__link">
+    Running GPU code on Midway2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cron-like-jobs" class="md-nav__link">
+    Cron-like jobs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway3_software_overview.md" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6_2" type="checkbox" id="__nav_3_6_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_6_2">
+          Commonly Used Applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Commonly Used Applications" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Commonly Used Applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway3_python.md" class="md-nav__link">
+        Python and Conda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway3_jupyter.md" class="md-nav__link">
+        Jupyter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway3_tf_pytorch.md" class="md-nav__link">
+        Tensorflow and PyTorch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway3_software_list.md" class="md-nav__link">
+        List of All Software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway3_software_requests.md" class="md-nav__link">
+        Request New Software
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midway_troubleshooting/" class="md-nav__link">
+        Troubleshooting and FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Specialized Systems and Partitions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Specialized Systems and Partitions" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Specialized Systems and Partitions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          MidwayR
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MidwayR" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          MidwayR
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../midwayr/midwayR_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          Beagle3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Beagle3" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Beagle3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../other_systems/beagle3_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          DaLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="DaLI" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          DaLI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../other_systems/dali_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          MidwaySSD
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MidwaySSD" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          MidwaySSD
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../other_systems/midwayssd_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          Skyway
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Skyway" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Skyway
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../other_systems/skyway_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Facility Policies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Facility Policies" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Facility Policies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../facility_policies/" class="md-nav__link">
+        Policies
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorial_01.md" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Help
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Help" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Help
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../general_faq/" class="md-nav__link">
+        Frequently Asked Questions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact_us.md" class="md-nav__link">
+        Contact Us
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#job-arrays" class="md-nav__link">
+    Job arrays
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#large-memory-jobs" class="md-nav__link">
+    Large-memory jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Large-memory jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-a-large-memory-job" class="md-nav__link">
+    Running a large-memory job
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-computing-on-bigmem2" class="md-nav__link">
+    Interactive computing on bigmem2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-batch-jobs" class="md-nav__link">
+    Parallel batch jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpi-jobs" class="md-nav__link">
+    MPI jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="MPI jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-notes" class="md-nav__link">
+    Additional notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hybrid-mpiopenmp-jobs" class="md-nav__link">
+    Hybrid MPI/OpenMP jobs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpu-jobs" class="md-nav__link">
+    GPU jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="GPU jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-gpu-code-on-midway2" class="md-nav__link">
+    Running GPU code on Midway2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cron-like-jobs" class="md-nav__link">
+    Cron-like jobs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="illustrative-examples">Illustrative examples</h1>
+<p>Below are a number of example submission scripts that you can adapt to
+run your jobs on Midway. See also the materials from the
+<a href="https://github.com/rcc-uchicago/SLURM_WORKSHOP">RCC Slurm workshop</a>
+for additional examples.</p>
+<h2 id="job-arrays">Job arrays</h2>
+<p>Slurm job arrays provide a convenient way to submit a large number of
+independent processing jobs. For example, Slurm job arrays can be
+useful for applying the same or similar computation to a collection of
+data sets. When a job array script is submitted, a specified number of
+“array tasks” are created based on the “master” sbatch script.</p>
+<p>Consider the following example (from <code>array.sbatch</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=array</span>
+<span class="c1">#SBATCH --output=array_%A_%a.out</span>
+<span class="c1">#SBATCH --error=array_%A_%a.err</span>
+<span class="c1">#SBATCH --array=1-16</span>
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --partition=broadwl</span>
+<span class="c1">#SBATCH --ntasks=1</span>
+<span class="c1">#SBATCH --mem=4G</span>
+
+<span class="c1"># Print the task id.</span>
+<span class="nb">echo</span> <span class="s2">&quot;My SLURM_ARRAY_TASK_ID: &quot;</span> <span class="nv">$SLURM_ARRAY_TASK_ID</span>
+
+<span class="c1"># Add lines here to run your computations.</span>
+</code></pre></div>
+<p>In this simple example, <code>--array=1-16</code> requests 16 array tasks
+(numbered 1 through 16). The “array tasks” are copies of the master
+script that are automatically submitted to the scheduler on your
+behalf. In each array task, the environment variable
+<code>SLURM_ARRAY_TASK_ID</code> is set to a unique value (in this
+example, numbers ranging from 1 to 16).</p>
+<p>Job array indices can be specified in several different ways. Here are
+some examples:</p>
+<div class="highlight"><pre><span></span><code># A job array with array tasks numbered from 0 to 31.
+#SBATCH --array=0-31
+
+# A job array with array tasks numbered 1, 2, 5, 19, 27.
+#SBATCH --array=1,2,5,19,27
+
+# A job array with array tasks numbered 1, 3, 5 and 7.
+#SBATCH --array=1-7:2
+</code></pre></div>
+<p>In the example sbatch script above, the <code>%A_%a</code> notation is filled
+in with the master job id (<code>%A</code>) and the array task id (<code>%a</code>).
+This is a simple way to create output files in which the file name is
+different for each job in the array.</p>
+<p>The remaining options in the sbatch script are the same as the options used in other, non-array settings; in this example, we are requesting
+that each array task be allocated 1 CPU (<code>--ntasks=1</code>) and 4
+GB of memory (<code>--mem=4G</code>) on the broadwl partition
+(<code>--partition=broadwl</code>) for up to one hour
+(<code>--time=01:00:00</code>).</p>
+<p>Most partitions have limits on the number of array tasks that can run
+simultaneously. To achieve a higher throughput, consider
+<a href="../srun-parallel/index.md#parallel-batch">Parallel batch jobs</a>.</p>
+<p>For more information about Slurm job arrays, consule the  the</p>
+<div class="highlight"><pre><span></span><code>`Slurm
+documentation on job arrays`_
+</code></pre></div>
+<h2 id="large-memory-jobs">Large-memory jobs</h2>
+<p>The <code>bigmem2</code> partition is particularly well suited for computations
+that need more than about 60 GB of memory; see <a href="../../using-midway/index.md#node-types">Types of Compute Nodes</a> for
+technical specifications of the bigmem2 nodes.</p>
+<h3 id="running-a-large-memory-job">Running a large-memory job</h3>
+<p>To submit a job to bigmem2, include this line in your sbatch script:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --partition=bigmem2</span>
+</code></pre></div>
+<p>Additionally, it is important to use the <code>--mem</code> or
+<code>--mem-per-cpu</code> options. For example, to request 8 CPU cores
+and 128 GB of memory on a bigmem2 node, add the following to your
+sbatch script:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --ntasks=1</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
+<span class="c1">#SBATCH --mem=128G</span>
+</code></pre></div>
+<h3 id="interactive-computing-on-bigmem2">Interactive computing on bigmem2</h3>
+<p>These same options can also be used to set up an sinteractive
+session. For example, to access a bigmem2 node with 1 CPU
+and 128 GB of memory, run:</p>
+<div class="highlight"><pre><span></span><code>sinteractive --partition<span class="o">=</span>bigmem2 --ntasks<span class="o">=</span><span class="m">1</span> --cpus-per-task<span class="o">=</span><span class="m">8</span> --mem<span class="o">=</span>128G
+</code></pre></div>
+<h2 id="parallel-batch-jobs">Parallel batch jobs</h2>
+<p>Computations involving a very large number of independent computations
+should be combined in some way to reduce the number of jobs submitted
+to Slurm. Here we illustrate one strategy for doing this using <a href="http://www.gnu.org/software/parallel">GNU
+Parallel</a> and <strong>srun</strong>. The <strong>parallel</strong> program
+executes tasks simultaneously until all tasks have been completed.</p>
+<p>Here’s an example script, <code>parallel.sbatch</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --partition=broadwl</span>
+<span class="c1">#SBATCH --ntasks=28</span>
+<span class="c1">#SBATCH --mem-per-cpu=2G  # NOTE DO NOT USE THE --mem= OPTION</span>
+
+<span class="c1"># Load the default version of GNU parallel.</span>
+module load parallel
+
+<span class="c1"># When running a large number of tasks simultaneously, it may be</span>
+<span class="c1"># necessary to increase the user process limit.</span>
+<span class="nb">ulimit</span> -u <span class="m">10000</span>
+
+<span class="c1"># This specifies the options used to run srun. The &quot;-N1 -n1&quot; options are</span>
+<span class="c1"># used to allocates a single core to each task.</span>
+<span class="nv">srun</span><span class="o">=</span><span class="s2">&quot;srun --exclusive -N1 -n1&quot;</span>
+
+<span class="c1"># This specifies the options used to run GNU parallel:</span>
+<span class="c1">#</span>
+<span class="c1">#   --delay of 0.2 prevents overloading the controlling node.</span>
+<span class="c1">#</span>
+<span class="c1">#   -j is the number of tasks run simultaneously.</span>
+<span class="c1">#</span>
+<span class="c1">#   The combination of --joblog and --resume create a task log that</span>
+<span class="c1">#   can be used to monitor progress.</span>
+<span class="c1">#</span>
+<span class="nv">parallel</span><span class="o">=</span><span class="s2">&quot;parallel --delay 0.2 -j </span><span class="nv">$SLURM_NTASKS</span><span class="s2"> --joblog runtask.log --resume&quot;</span>
+
+<span class="c1"># Run a script, runtask.sh, using GNU parallel and srun. Parallel</span>
+<span class="c1"># will run the runtask script for the numbers 1 through 128. To</span>
+<span class="c1"># illustrate, the first job will run like this:</span>
+<span class="c1">#</span>
+<span class="c1">#   srun --exclusive -N1 -n1 ./runtask.sh arg1:1 &gt; runtask.1</span>
+<span class="c1">#</span>
+<span class="nv">$parallel</span> <span class="s2">&quot;</span><span class="nv">$srun</span><span class="s2"> ./runtask.sh arg1:{1} &gt; runtask.sh.{1}&quot;</span> ::: <span class="o">{</span><span class="m">1</span>..128<span class="o">}</span>
+
+<span class="c1"># Note that if your program does not take any input, use the -n0 option to</span>
+<span class="c1"># call the parallel command:</span>
+<span class="c1">#</span>
+<span class="c1">#   $parallel -n0 &quot;$srun ./run_noinput_task.sh &gt; output.{1}&quot; ::: {1..128}</span>
+</code></pre></div>
+<p>In this example, our aim is to run script <code>runtask.sh</code> 128
+times. The <code>--ntasks</code> option is set to 28, so at most 28 tasks
+can be run simultaneously.</p>
+<p>Here is the <code>runtask.sh</code> script that is run by GNU parallel:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+<span class="c1"># This script outputs some useful information so we can see what parallel</span>
+<span class="c1"># and srun are doing.</span>
+
+<span class="nv">sleepsecs</span><span class="o">=</span>$<span class="o">[</span> <span class="o">(</span> <span class="nv">$RANDOM</span> % <span class="m">10</span> <span class="o">)</span> + <span class="m">10</span> <span class="o">]</span>s
+
+<span class="c1"># $1 is arg1:{1} from GNU parallel.</span>
+<span class="c1">#</span>
+<span class="c1"># $PARALLEL_SEQ is a special variable from GNU parallel. It gives the</span>
+<span class="c1"># number of the job in the sequence.</span>
+<span class="c1">#</span>
+<span class="c1"># Here we print the sleep time, host name, and the date and time.</span>
+<span class="nb">echo</span> task <span class="nv">$1</span> seq:<span class="nv">$PARALLEL_SEQ</span> sleep:<span class="nv">$sleepsecs</span> host:<span class="k">$(</span>hostname<span class="k">)</span> date:<span class="k">$(</span>date<span class="k">)</span>
+
+<span class="c1"># Sleep a random amount of time.</span>
+sleep <span class="nv">$sleepsecs</span>
+</code></pre></div>
+<p>To submit this job, copy both <code>parallel.sbatch</code> and
+<code>runtask.sh</code> to the same directory, and run <code>chmod +x
+runtask.sh</code> to make <code>runtask.sh</code> executable. Then the job can be
+submitted to the Slurm queue:</p>
+<div class="highlight"><pre><span></span><code>sbatch parallel.sbatch
+</code></pre></div>
+<p>When this job completes, you should see output files with names
+<code>runtask.sh.N</code>, where <code>N</code> is a number between 1 and 128. The
+content of the first output file (i.e., <code>runtask.sh.1</code>) should look
+something like this:</p>
+<div class="highlight"><pre><span></span><code>task arg1:1 seq:1 sleep:14s host:midway2-0002 date:Thu Jan 10 09:17:36 CST 2017
+</code></pre></div>
+<p>Another file <code>runtask.log</code> is also created. It gives a list of
+the completed jobs. (Note: If the sbatch is submitted again, nothing
+will be run until <code>runtask.log</code> is removed.)</p>
+<p>It is also possible to use this same technique to run multithreaded
+tasks in parallel. Here is an example sbatch script,
+<code>parallel-hybrid.sbatch</code>, that distributes multithreaded
+computations (each using 28 CPUs) across 2 nodes:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+<span class="c1">#SBATCH --partition=broadwl</span>
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --nodes=2</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH --cpus-per-task=28</span>
+<span class="c1">#SBATCH --exclusive</span>
+
+<span class="c1"># Load the default version of GNU parallel.</span>
+module load parallel
+
+<span class="nv">srun</span><span class="o">=</span><span class="s2">&quot;srun --exclusive -N1 -n1 --cpus-per-task </span><span class="nv">$SLURM_CPUS_PER_TASK</span><span class="s2">&quot;</span>
+
+<span class="c1"># Instead of $SLURM_NTASKS, use $SLURM_NNODES to determine how</span>
+<span class="c1"># many jobs should be run simultaneously.</span>
+<span class="nv">parallel</span><span class="o">=</span><span class="s2">&quot;parallel --delay 0.2 -j </span><span class="nv">$SLURM_NNODES</span><span class="s2"> --joblog runtask.log --resume&quot;</span>
+
+<span class="c1"># Run the parallel command.</span>
+<span class="nv">$parallel</span> <span class="s2">&quot;</span><span class="nv">$srun</span><span class="s2"> ./runtask.sh arg1:{1} &gt; runtask.sh.{1}&quot;</span> ::: <span class="o">{</span><span class="m">1</span>..6<span class="o">}</span>
+</code></pre></div>
+<h2 id="mpi-jobs">MPI jobs</h2>
+<p>Here we present a couple small examples illustrating how to use MPI
+for distributed computing Midway. For more information on the MPI
+libraries available on Midway, see <a href="../../software/libraries/mpi/index.md#mpi-libraries">Message Passing Interface (MPI)</a>.</p>
+<p>Our main illustration is a “hello world” example. See file
+<code>hellompi.c</code> for the C code we will compile and run.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;mpi.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[],</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">envp</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">numprocs</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">namelen</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">processor_name</span><span class="p">[</span><span class="n">MPI_MAX_PROCESSOR_NAME</span><span class="p">];</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">numprocs</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rank</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MPI_Get_processor_name</span><span class="p">(</span><span class="n">processor_name</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">namelen</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Process %d on %s out of %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">processor_name</span><span class="p">,</span><span class="w"> </span><span class="n">numprocs</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">MPI_Finalize</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Copy <code>hellompi.c</code> to your home directory on Midway, load the
+default OpenMPI module, and compile the program on a Midway login
+node:</p>
+<div class="highlight"><pre><span></span><code>module load openmpi
+mpicc hellompi.c -o hellompi
+</code></pre></div>
+<p><code>hellompi.sbatch</code> is a submission script that can be used to
+submit a job to Midway to run the <code>hellompi</code> program:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=hellompi</span>
+<span class="c1">#SBATCH --output=hellompi.out</span>
+<span class="c1">#SBATCH --ntasks=56</span>
+<span class="c1">#SBATCH --partition=broadwl</span>
+<span class="c1">#SBATCH --constraint=fdr</span>
+
+<span class="c1"># Load the default OpenMPI module.</span>
+module load openmpi
+
+<span class="c1"># Run the hellompi program with mpirun. The -n flag is not required;</span>
+<span class="c1"># mpirun will automatically figure out the best configuration from the</span>
+<span class="c1"># Slurm environment variables.</span>
+ mpirun ./hellompi
+</code></pre></div>
+<p>Submit the MPI job to the Slurm job scheduler from a Midway login
+node:</p>
+<div class="highlight"><pre><span></span><code>sbatch hellompi.sbatch
+</code></pre></div>
+<p>Here is an example output:</p>
+<div class="highlight"><pre><span></span><code>Process 1 on midway2-0172.rcc.local out of 56
+Process 3 on midway2-0172.rcc.local out of 56
+Process 5 on midway2-0172.rcc.local out of 56
+Process 7 on midway2-0172.rcc.local out of 56
+Process 6 on midway2-0172.rcc.local out of 56
+Process 9 on midway2-0172.rcc.local out of 56
+Process 10 on midway2-0172.rcc.local out of 56
+Process 11 on midway2-0172.rcc.local out of 56
+Process 13 on midway2-0172.rcc.local out of 56
+Process 0 on midway2-0172.rcc.local out of 56
+Process 2 on midway2-0172.rcc.local out of 56
+Process 4 on midway2-0172.rcc.local out of 56
+Process 8 on midway2-0172.rcc.local out of 56
+Process 12 on midway2-0172.rcc.local out of 56
+Process 17 on midway2-0173.rcc.local out of 56
+Process 19 on midway2-0173.rcc.local out of 56
+Process 21 on midway2-0173.rcc.local out of 56
+Process 28 on midway2-0173.rcc.local out of 56
+Process 29 on midway2-0173.rcc.local out of 56
+Process 31 on midway2-0173.rcc.local out of 56
+Process 32 on midway2-0173.rcc.local out of 56
+Process 15 on midway2-0173.rcc.local out of 56
+Process 18 on midway2-0173.rcc.local out of 56
+Process 20 on midway2-0173.rcc.local out of 56
+Process 22 on midway2-0173.rcc.local out of 56
+Process 23 on midway2-0173.rcc.local out of 56
+Process 24 on midway2-0173.rcc.local out of 56
+Process 52 on midway2-0175.rcc.local out of 56
+Process 25 on midway2-0173.rcc.local out of 56
+Process 53 on midway2-0175.rcc.local out of 56
+Process 26 on midway2-0173.rcc.local out of 56
+Process 54 on midway2-0175.rcc.local out of 56
+Process 27 on midway2-0173.rcc.local out of 56
+Process 55 on midway2-0175.rcc.local out of 56
+Process 14 on midway2-0173.rcc.local out of 56
+Process 16 on midway2-0173.rcc.local out of 56
+Process 30 on midway2-0173.rcc.local out of 56
+Process 43 on midway2-0174.rcc.local out of 56
+Process 51 on midway2-0174.rcc.local out of 56
+Process 48 on midway2-0174.rcc.local out of 56
+Process 49 on midway2-0174.rcc.local out of 56
+Process 46 on midway2-0174.rcc.local out of 56
+Process 44 on midway2-0174.rcc.local out of 56
+Process 45 on midway2-0174.rcc.local out of 56
+Process 40 on midway2-0174.rcc.local out of 56
+Process 42 on midway2-0174.rcc.local out of 56
+Process 36 on midway2-0174.rcc.local out of 56
+Process 37 on midway2-0174.rcc.local out of 56
+Process 47 on midway2-0174.rcc.local out of 56
+Process 34 on midway2-0174.rcc.local out of 56
+Process 38 on midway2-0174.rcc.local out of 56
+Process 35 on midway2-0174.rcc.local out of 56
+Process 39 on midway2-0174.rcc.local out of 56
+Process 41 on midway2-0174.rcc.local out of 56
+Process 50 on midway2-0174.rcc.local out of 56
+Process 33 on midway2-0174.rcc.local out of 56
+</code></pre></div>
+<p>From this output, we observe that the computation is distributed on 4
+different nodes, with many threads running simultaneously on the same
+node.</p>
+<p>When developing your own sbatch script for MPI-based computations,
+keep in mind the following points.</p>
+<p>Without the <code>--constraint=fdr</code> or <code>--constraint=edr</code>
+options, your computations may run on nodes with FDR, EDR, or
+combination of both.</p>
+<p>It is possible to control the number of tasks that are run per node
+with the <code>--ntasks-per-node</code> option. For example, submitting
+the job like this to Midway:</p>
+<div class="highlight"><pre><span></span><code>sbatch --ntasks-per-node=1 hellompi.sbatch
+</code></pre></div>
+<p>results in each thread running on a different node:</p>
+<div class="highlight"><pre><span></span><code>Process 52 on midway2-0175.rcc.local out of 56 
+Process 50 on midway2-0173.rcc.local out of 56
+Process 49 on midway2-0172.rcc.local out of 56
+Process 0 on midway2-0002.rcc.local out of 56
+Process 13 on midway2-0052.rcc.local out of 56
+Process 2 on midway2-0013.rcc.local out of 56
+Process 9 on midway2-0033.rcc.local out of 56
+Process 54 on midway2-0177.rcc.local out of 56
+Process 53 on midway2-0176.rcc.local out of 56
+Process 44 on midway2-0157.rcc.local out of 56
+Process 55 on midway2-0178.rcc.local out of 56
+Process 11 on midway2-0041.rcc.local out of 56
+Process 40 on midway2-0152.rcc.local out of 56
+Process 43 on midway2-0156.rcc.local out of 56
+Process 45 on midway2-0161.rcc.local out of 56
+Process 46 on midway2-0162.rcc.local out of 56
+Process 38 on midway2-0147.rcc.local out of 56
+Process 39 on midway2-0148.rcc.local out of 56
+Process 24 on midway2-0101.rcc.local out of 56
+Process 3 on midway2-0014.rcc.local out of 56
+Process 42 on midway2-0155.rcc.local out of 56
+Process 51 on midway2-0174.rcc.local out of 56
+Process 36 on midway2-0145.rcc.local out of 56  
+Process 25 on midway2-0102.rcc.local out of 56
+Process 16 on midway2-0055.rcc.local out of 56
+Process 18 on midway2-0057.rcc.local out of 56
+Process 12 on midway2-0051.rcc.local out of 56
+Process 14 on midway2-0053.rcc.local out of 56
+Process 4 on midway2-0015.rcc.local out of 56
+Process 15 on midway2-0054.rcc.local out of 56
+Process 48 on midway2-0164.rcc.local out of 56
+Process 28 on midway2-0105.rcc.local out of 56
+Process 22 on midway2-0097.rcc.local out of 56
+Process 30 on midway2-0118.rcc.local out of 56
+Process 1 on midway2-0012.rcc.local out of 56
+Process 35 on midway2-0144.rcc.local out of 56
+Process 17 on midway2-0056.rcc.local out of 56
+Process 37 on midway2-0146.rcc.local out of 56
+Process 32 on midway2-0141.rcc.local out of 56
+Process 34 on midway2-0143.rcc.local out of 56
+Process 27 on midway2-0104.rcc.local out of 56
+Process 31 on midway2-0119.rcc.local out of 56  
+Process 29 on midway2-0106.rcc.local out of 56
+Process 10 on midway2-0034.rcc.local out of 56
+Process 47 on midway2-0163.rcc.local out of 56
+Process 33 on midway2-0142.rcc.local out of 56
+Process 26 on midway2-0103.rcc.local out of 56
+Process 7 on midway2-0019.rcc.local out of 56
+Process 20 on midway2-0073.rcc.local out of 56
+Process 5 on midway2-0016.rcc.local out of 56
+Process 8 on midway2-0027.rcc.local out of 56
+Process 41 on midway2-0153.rcc.local out of 56
+Process 6 on midway2-0017.rcc.local out of 56
+Process 21 on midway2-0096.rcc.local out of 56
+Process 19 on midway2-0072.rcc.local out of 56
+Process 23 on midway2-0100.rcc.local out of 56
+</code></pre></div>
+<h3 id="additional-notes">Additional notes</h3>
+<p>Both OpenMPI and IntelMPI have the ability to launch MPI programs
+directly with the Slurm command <strong>srun</strong>. It is not necessary to use this mode for most jobs, but it may provide additional job
+launch options. For example, from a Midway login node it is possible
+to launch the above <code>hellompi</code> program using OpenMPI using 28
+MPI processes:</p>
+<div class="highlight"><pre><span></span><code>srun -n28 hellompi
+</code></pre></div>
+<p>With IntelMPI, you need to also set an environment variable for this
+to work:</p>
+<div class="highlight"><pre><span></span><code>export I_MPI_PMI_LIBRARY=/software/slurm-current-$DISTARCH/lib/libpmi.so
+srun -n28 hellompi
+</code></pre></div>
+<h2 id="hybrid-mpiopenmp-jobs">Hybrid MPI/OpenMP jobs</h2>
+<p>MPI and OpenMP can be used at the same time to create a Hybrid
+MPI/OpenMP program.</p>
+<p>Let’s look at an example Hybrid MPI/OpenMP hello world program and
+explain the steps needed to compile and submit it to the queue. An
+example hybrid MPI hello world program: <code>hellohybrid.c</code></p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;omp.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;mpi.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">numprocs</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">namelen</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">processor_name</span><span class="p">[</span><span class="n">MPI_MAX_PROCESSOR_NAME</span><span class="p">];</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">iam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">numprocs</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">rank</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">MPI_Get_processor_name</span><span class="p">(</span><span class="n">processor_name</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">namelen</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="cp">#pragma omp parallel default(shared) private(iam, np)</span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">np</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp_get_num_threads</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">iam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp_get_thread_num</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello from thread %d out of %d from process %d out of %d on %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">           </span><span class="n">iam</span><span class="p">,</span><span class="w"> </span><span class="n">np</span><span class="p">,</span><span class="w"> </span><span class="n">rank</span><span class="p">,</span><span class="w"> </span><span class="n">numprocs</span><span class="p">,</span><span class="w"> </span><span class="n">processor_name</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">MPI_Finalize</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>To run the program on the RCC cluster, copy <code>hellohybrid.c</code> and
+<code>hellohybrid.sbatch</code> to your home directory, then compile the code
+interactively by entering the following commands into a terminal on a
+Midway2 login node:</p>
+<div class="highlight"><pre><span></span><code>module load openmpi
+mpicc -fopenmp hellohybrid.c -o hellohybrid
+</code></pre></div>
+<p>Here we load the default MPI compiler, but it should be possible to
+use any available MPI compiler to compile and run this example. Note
+that the option <code>-fopenmp</code> must be used here to compile the
+program because the code includes OpenMP directives (use
+<code>-openmp</code> for the Intel compiler and <code>-mp</code> for the PGI
+compiler).</p>
+<p><code>hellohybrid.sbatch</code> is a submission script that can be used
+to submit a job to Midway2 to run the <code>hellohybrid</code> program.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># A job submission script for running a hybrid MPI/OpenMP job on</span>
+<span class="c1"># Midway2.</span>
+
+<span class="c1">#SBATCH --job-name=hellohybrid</span>
+<span class="c1">#SBATCH --output=hellohybrid.out</span>
+<span class="c1">#SBATCH --ntasks=4</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
+<span class="c1">#SBATCH --partition=broadwl</span>
+<span class="c1">#SBATCH --constraint=edr</span>
+
+<span class="c1"># Load the default OpenMPI module.</span>
+module load openmpi
+
+<span class="c1"># Set OMP_NUM_THREADS to the number of CPUs per task we asked for.</span>
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_CPUS_PER_TASK</span>
+
+<span class="c1"># Run the process with mpirun. Note that the -n option is not required</span>
+<span class="c1"># in this case; mpirun will automatically determine how many processes</span>
+<span class="c1"># to run from the Slurm settings.</span>
+mpirun ./hellohybrid
+
+The options are similar to running an MPI job, with some differences:
+
+
+* <span class="sb">`</span>--ntasks<span class="o">=</span><span class="m">4</span><span class="sb">`</span> specifies the number of MPI processes <span class="o">(</span>“tasks”<span class="o">)</span>.
+
+
+* <span class="sb">`</span>--cpus-per-task<span class="o">=</span><span class="m">8</span><span class="sb">`</span> allocates <span class="m">8</span> CPUs <span class="k">for</span> each task.
+
+
+* <span class="sb">`</span><span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_CPUS_PER_TASK</span><span class="sb">`</span> sets the number of
+OpenMP threads to the number of requested cores <span class="o">(</span>CPUs<span class="o">)</span> <span class="k">for</span> each
+task.
+
+You can submit <span class="sb">`</span>hellohybrid.sbatch<span class="sb">`</span> using the following
+<span class="nb">command</span> from one of Midway2 login nodes:
+
+
+<span class="sb">```</span>default
+sbatch hellohybrid.sbatch
+</code></pre></div>
+<p>Here is an example output of this program submitted to the <code>broadwl</code>
+partition on Midway2:</p>
+<div class="highlight"><pre><span></span><code>Hello from thread <span class="m">0</span> out of <span class="m">8</span> from process <span class="m">0</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">6</span> out of <span class="m">8</span> from process <span class="m">0</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">0</span> out of <span class="m">8</span> from process <span class="m">1</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">7</span> out of <span class="m">8</span> from process <span class="m">1</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">3</span> out of <span class="m">8</span> from process <span class="m">1</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">2</span> out of <span class="m">8</span> from process <span class="m">0</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">3</span> out of <span class="m">8</span> from process <span class="m">0</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">4</span> out of <span class="m">8</span> from process <span class="m">0</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">5</span> out of <span class="m">8</span> from process <span class="m">0</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">1</span> out of <span class="m">8</span> from process <span class="m">0</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">7</span> out of <span class="m">8</span> from process <span class="m">0</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">2</span> out of <span class="m">8</span> from process <span class="m">1</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">1</span> out of <span class="m">8</span> from process <span class="m">1</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">4</span> out of <span class="m">8</span> from process <span class="m">1</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">5</span> out of <span class="m">8</span> from process <span class="m">1</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">6</span> out of <span class="m">8</span> from process <span class="m">1</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">0</span> out of <span class="m">8</span> from process <span class="m">2</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">7</span> out of <span class="m">8</span> from process <span class="m">2</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">4</span> out of <span class="m">8</span> from process <span class="m">2</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">5</span> out of <span class="m">8</span> from process <span class="m">2</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">1</span> out of <span class="m">8</span> from process <span class="m">2</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">6</span> out of <span class="m">8</span> from process <span class="m">2</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">3</span> out of <span class="m">8</span> from process <span class="m">2</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">2</span> out of <span class="m">8</span> from process <span class="m">2</span> out of <span class="m">4</span> on midway2-0269.rcc.local
+Hello from thread <span class="m">0</span> out of <span class="m">8</span> from process <span class="m">3</span> out of <span class="m">4</span> on midway2-0270.rcc.local
+Hello from thread <span class="m">7</span> out of <span class="m">8</span> from process <span class="m">3</span> out of <span class="m">4</span> on midway2-0270.rcc.local
+Hello from thread <span class="m">4</span> out of <span class="m">8</span> from process <span class="m">3</span> out of <span class="m">4</span> on midway2-0270.rcc.local
+Hello from thread <span class="m">6</span> out of <span class="m">8</span> from process <span class="m">3</span> out of <span class="m">4</span> on midway2-0270.rcc.local
+Hello from thread <span class="m">2</span> out of <span class="m">8</span> from process <span class="m">3</span> out of <span class="m">4</span> on midway2-0270.rcc.local
+Hello from thread <span class="m">5</span> out of <span class="m">8</span> from process <span class="m">3</span> out of <span class="m">4</span> on midway2-0270.rcc.local
+Hello from thread <span class="m">1</span> out of <span class="m">8</span> from process <span class="m">3</span> out of <span class="m">4</span> on midway2-0270.rcc.local
+</code></pre></div>
+<h2 id="gpu-jobs">GPU jobs</h2>
+<p>The <code>gpu2</code> partition is dedicated to software that uses Graphical
+Processing Units (GPUs). See <a href="../../using-midway/index.md#node-types">Types of Compute Nodes</a> for technical
+specifications of the gpu2 nodes.</p>
+<p>CUDA and OpenACC are two widely used tools for developing GPU-based
+software. For information on compiling code with CUDA and OpenACC, see
+<a href="../../software/compilers/nvidia/index.md#gpu-compiling">CUDA and OpenACC Compilers</a>.</p>
+<h3 id="running-gpu-code-on-midway2">Running GPU code on Midway2</h3>
+<p>To submit a job to one of the GPU nodes, you must include the
+following lines in your sbatch script:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#SBATCH --partition=gpu2</span>
+<span class="c1">#SBATCH --gres=gpu:N</span>
+</code></pre></div>
+<p>where <code>N</code> is the number of GPUs  requested. Allowable settings for <code>N</code> range from 1 to 4. If your application is entirely GPU
+driven, then you do not need to explicilty request cores as one
+CPU core will be assigned by default to act as a master to launch
+the GPU based calculation. If however your application is mixed
+CPU-GPU then you will need to request the number of cores with –ntasks
+as is required by your job.</p>
+<p>Here is an example sbatch script that allocates GPU resources and loads
+the CUDA compilers (see also <code>gpu.sbatch</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --job-name=gpu   # job name</span>
+<span class="c1">#SBATCH --output=gpu.out # output log file</span>
+<span class="c1">#SBATCH --error=gpu.err  # error file</span>
+<span class="c1">#SBATCH --time=01:00:00  # 1 hour of wall time</span>
+<span class="c1">#SBATCH --nodes=1        # 1 GPU node</span>
+<span class="c1">#SBATCH --partition=gpu2 # GPU2 partition</span>
+<span class="c1">#SBATCH --ntasks=1       # 1 CPU core to drive GPU</span>
+<span class="c1">#SBATCH --gres=gpu:1     # Request 1 GPU</span>
+
+<span class="c1"># Load all required modules below. As an example we load cuda/9.1</span>
+module load cuda/9.1
+
+<span class="c1"># Add lines here to run your GPU-based computations.</span>
+</code></pre></div>
+<h2 id="cron-like-jobs">Cron-like jobs</h2>
+<p>Cron jobs persist until they are canceled or encounter an error.
+The Midway2 cluster has a dedicated partition, <code>cron</code>, for running
+Cron jobs. Please email <a href="mailto:help@rcc.uchicago.edu">help@rcc.uchicago.edu</a> to request submitting
+Cron-like jobs. These jobs are subject to scheduling limits and will
+be monitored.</p>
+<p>Here is an example of an sbatch script that runs a Cron job (see also
+<code>cron.sbatch</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --time=00:05:00</span>
+<span class="c1">#SBATCH --output=cron.log</span>
+<span class="c1">#SBATCH --open-mode=append</span>
+<span class="c1">#SBATCH --account=cron-account</span>
+<span class="c1">#SBATCH --partition=cron</span>
+<span class="c1">#SBATCH --qos=cron</span>
+
+<span class="c1"># Specify a valid Cron string for the schedule. This specifies that</span>
+<span class="c1"># the Cron job run once per day at 5:15a.</span>
+<span class="nv">SCHEDULE</span><span class="o">=</span><span class="s1">&#39;15 5 * * *&#39;</span>
+
+<span class="c1"># Here is an example of a simple command that prints the host name and</span>
+<span class="c1"># the date and time.</span>
+<span class="nb">echo</span> <span class="s2">&quot;Hello on </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2"> at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">.&quot;</span>
+
+<span class="c1"># This schedules the next run.</span>
+sbatch --quiet --begin<span class="o">=</span><span class="k">$(</span>next-cron-time <span class="s2">&quot;</span><span class="nv">$SCHEDULE</span><span class="s2">&quot;</span><span class="k">)</span> cron.sbatch
+</code></pre></div>
+<p>After executing a simple command (print the host name, date and time),
+the script schedules the next run with another call to <code>sbatch</code> with
+the <code>--begin</code> option.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../midway_job_management/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Managing Jobs" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Managing Jobs
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../midway_troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshooting and FAQ" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Troubleshooting and FAQ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      
+    
+  </body>
+</html>
